@@ -1,0 +1,55 @@
+.homePage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    scroll-margin-top: 80;
+    ;
+}
+
+
+.hiDiv {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+
+.nameP {
+    color: var(--accent);
+    font-size: var(--fs-h2);
+    font-weight: bold;
+}
+
+.nameP,
+.specP {
+    font-family: var(--font-mono);
+
+
+}
+
+.photoDiv {
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photoCard {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--accent);
+    padding: 20px;
+}
+
+.photo {
+    width: 320px;
+    border: 1px solid var(--border-color);
+}
