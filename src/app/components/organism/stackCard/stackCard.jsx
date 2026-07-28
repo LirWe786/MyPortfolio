@@ -10,9 +10,8 @@ const StackCard = ({ widthImg, txt, children }) => {
         <motion.div
             whileHover={{
                 scale: 1.1,
-                transition: { width: 40, duration: 0.1 }
+                transition: {  duration: 0.1 }
             }}
-            transition={{ duration: 0.5 }}
             className={styles.StackCard}
         >
             <div></div>

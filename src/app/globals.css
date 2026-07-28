@@ -105,14 +105,9 @@ header {
   align-items: center;
   justify-content: center;
   gap: 5%;
-  font-family: var(--font-mono);
-
   position: fixed;
   top: 0;
 
-  a {
-    color: var(--text-secondary);
-  }
 }
 
 @media (prefers-color-scheme: dark) {

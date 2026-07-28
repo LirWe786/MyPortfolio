@@ -58,13 +58,51 @@
 }
 
 .aboutStackDiv {
-    
+
     width: 30%;
     height: 60%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items:center ;
+    align-items: center;
     gap: 20px;
     /* border: 1px solid black; */
+}
+
+.resumeContainer {
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gitA {
+    cursor: pointer;
+    
+}
+
+.resumeA {
+    width: 32%;
+    height: 72%;
+    border: 1px solid var(--accent);
+    padding: 4px;
+    text-align: center;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+}
+
+.resumeA:hover {
+    color: var(--text-muted);
+    border: 1px solid var(--accent-dark);
+
+}
+
+.resumeA:active {
+    color: var(--accent);
+    background-color: var(--accent-dark);
+    box-shadow: 4px solid var(--accent-dark);
 }
