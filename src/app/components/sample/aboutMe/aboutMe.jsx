@@ -121,7 +121,8 @@ const AboutMe = () => {
                             href="https://github.com/LirWe786"
                             className={styles.gitA}
                             whileHover={{
-
+                                scale:1.2,
+                                transition:{duration: 0.1}
                             }} 
                         >
                             <FaGithub size={32} />
