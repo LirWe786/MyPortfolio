@@ -1,6 +1,8 @@
 'use client'
 import styles from "./aboutme.module.css"
-import StackCard from "../../organism/stackCard/stackCard"
+import StackCard from "../../organism/stackCard/stackCard";
+
+import Line from "../../molecules/line/line";
 import { FaGithub } from "react-icons/fa";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
@@ -21,15 +23,7 @@ const AboutMe = () => {
             className={styles.aboutMe}
         >
 
-            <div
-
-                className={styles.aboutLnContainer}
-            >
-                <p className={styles.lineP} >about me</p>
-                <div
-                    className={styles.line}
-                ></div>
-            </div>
+            <Line txt='about me' ></Line>
             <div className={styles.aboutMain} >
                 <motion.div
                     ref={ref}
@@ -121,9 +115,9 @@ const AboutMe = () => {
                             href="https://github.com/LirWe786"
                             className={styles.gitA}
                             whileHover={{
-                                scale:1.2,
-                                transition:{duration: 0.1}
-                            }} 
+                                scale: 1.2,
+                                transition: { duration: 0.1 }
+                            }}
                         >
                             <FaGithub size={32} />
                         </motion.a>
