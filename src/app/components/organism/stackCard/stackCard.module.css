@@ -1,0 +1,14 @@
+.StackCard {
+    /* border: 1px solid var(--accent); */
+    width: 5vw;
+    height: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.StackCardP{
+    font-family: var(--font-mono);
+    text-align: center;
+}

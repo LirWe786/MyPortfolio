@@ -8,20 +8,27 @@ const HomePage = () => {
         <motion.div
             id="home"
             className={styles.homePage}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+
         >
 
-            <div className={styles.hiDiv}>
+            <motion.div
+                className={styles.hiDiv}
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0, }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
                 <p
                     className={styles.nameP}
                 > &lt;Chin-Giz/&gt; </p>
                 <p
                     className={styles.specP}
                 >Frontend developer</p>
-            </div>
-            <div className={styles.photoDiv} >
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className={styles.photoDiv} >
                 <div className={styles.photoCard}>
                     <img
                         src="photo.jpg"
@@ -29,7 +36,7 @@ const HomePage = () => {
                         className={styles.photo} />
 
                 </div>
-            </div>
+            </motion.div>
 
         </motion.div>
     )

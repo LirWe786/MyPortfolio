@@ -1,31 +1,31 @@
+'use client'
+import { hover } from "motion";
+import { useRef, useEffect } from "react";
+import HeaderA from "../../atoms/heaaderA/headerA";
 
 import Link from "next/link";
 
 const Header = () => {
+
+    const ref = useRef(null)
+
+
+
+    useEffect(() => {
+        return hover(ref.current, () => {
+            console.log("on hover start")
+            return () => console.log("on hover end")
+        })
+    }, [])
+
     return (
         <header
-            
+
         >
-            <Link
-                scroll={true}
-                href="#home"
-                replace
-            >home</Link>
-            <Link
-                scroll={true}
-                href="#about"
-                replace
-            >about</Link>
-            <Link
-                scroll={true}
-                href="#contacs"
-                replace
-            >contacts</Link>
-            <Link
-                scroll={true}
-                href="#resume"
-                replace
-            >resume</Link>
+            <HeaderA id='home' > </HeaderA>
+            <HeaderA id='about' > </HeaderA>
+            <HeaderA id='projects'> </HeaderA>
+            <HeaderA id='contact' > </HeaderA>
 
         </header>
     )
