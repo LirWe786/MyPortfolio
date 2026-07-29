@@ -1,4 +1,5 @@
 .workCard {
+    user-select: none;
     width: 32vw;
     height: 20vh;
     border-bottom: 1px solid var(--accent-dark);
@@ -26,6 +27,16 @@
 .workTag {
     color: var(--text-muted);
 
+}
+
+.workLinkContainer {
+    display: flex;
+    width: 20%;
+    gap: 5px;
+}
+
+.arrow {
+    color: var(--accent);
 }
 
 .workLink {

@@ -9,8 +9,8 @@ import { useRef } from "react";
 
 const AboutMe = () => {
 
-    const ref = useRef(null)
-    const isInView = useInView(ref)
+    const ref = useRef(null);
+    const isInView = useInView(ref);
 
 
 

@@ -1,10 +1,14 @@
+
+
 import styles from "./projects.module.css";
 import Line from '@/app/components/molecules/line/line';
 import works from '@/data/works';
 import WorkCard from "../../molecules/workCard/workCard";
+
+
 const Projects = () => {
 
-
+  
 
     return (
         <div
