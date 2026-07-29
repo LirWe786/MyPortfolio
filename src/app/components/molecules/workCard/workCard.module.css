@@ -1,0 +1,35 @@
+.workCard {
+    width: 32vw;
+    height: 20vh;
+    border-bottom: 1px solid var(--accent-dark);
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding: 1.4rem;
+    font-family: var(--font-mono);
+}
+
+.workName {
+    font-size: var(--fs-h3);
+    color: var(--text-primary);
+}
+
+.workTagsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.workTag {
+    color: var(--text-muted);
+
+}
+
+.workLink {
+    display: flex;
+    align-items: center;
+    color: var(--accent);
+}

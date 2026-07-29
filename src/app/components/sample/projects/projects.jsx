@@ -1,5 +1,7 @@
-import styles from "./projects.module.css"
-
+import styles from "./projects.module.css";
+import Line from '@/app/components/molecules/line/line';
+import works from '@/data/works';
+import WorkCard from "../../molecules/workCard/workCard";
 const Projects = () => {
 
 
@@ -10,9 +12,16 @@ const Projects = () => {
             id="projects"
             className={styles.projects}
         >
-            <p>projecvcts
 
-            </p>
+            <Line txt='projects' ></Line>
+
+            <div
+                className={styles.projectsMain}
+            >
+                {works.map((work) => (
+                    <WorkCard work={work} key={work.id} />
+                ))}
+            </div>
         </div>
     )
 }

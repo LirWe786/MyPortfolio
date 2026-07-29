@@ -1,6 +1,6 @@
 'use client'
 import styles from "./aboutme.module.css"
-import StackCard from "../../organism/stackCard/stackCard";
+import StackCard from "../../molecules/stackCard/stackCard";
 
 import Line from "../../molecules/line/line";
 import { FaGithub } from "react-icons/fa";
