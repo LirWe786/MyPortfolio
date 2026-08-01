@@ -1,8 +1,10 @@
 'use client'
 import styles from "./aboutme.module.css"
 import StackCard from "../../molecules/stackCard/stackCard";
-
 import Line from "../../molecules/line/line";
+import GhostTerminal from "../../organism/ghostTerminal/ghostTerminal";
+import TerminalAbout from "../../organism/aboutTerminal/aboutTerminal";
+import MagneticButton from "../../molecules/magneticButton/magneticButton";
 import { FaGithub } from "react-icons/fa";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
@@ -22,9 +24,10 @@ const AboutMe = () => {
             id='about'
             className={styles.aboutMe}
         >
-
+            <GhostTerminal></GhostTerminal>
             <Line txt='about me' ></Line>
             <div className={styles.aboutMain} >
+
                 <motion.div
                     ref={ref}
                     animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: 40 }}
@@ -79,6 +82,10 @@ const AboutMe = () => {
                         </svg>
                     </StackCard>
 
+                    <StackCard widthImg={{ width: 80 }} txt='Node JS' >
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain-wordmark.svg" />
+                    </StackCard>
+
                 </motion.div>
 
                 <motion.div
@@ -88,44 +95,32 @@ const AboutMe = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className={styles.scndLine}></div>
-                    <p
-                        className={styles.aboutP}
-                    >Hi! I'm Chin-Giz — a frontend developer passionate about building
-                        modern, fast, and responsive web interfaces.<br></br>
-                        <br></br>
-                        I recently completed an intensive training program where I mastered
-                        creating pixel-perfect layouts from complex designs. I enjoy turning
-                        Figma mockups into clean, reusable code.<br></br>
-                        <br></br>
-                        I specialize in React, Next.js, and TypeScript, focusing on
-                        component-driven development, clean architecture, and performance.
-                        I work with Tailwind CSS and Material UI for styling, Zustand for
-                        state management, and Motion.dev for animations.<br></br>
-                        <br></br>
-                        I learn fast, pay attention to details, and strive to grow in
-                        commercial development as part of a product team.
-                    </p>
+
+                    <TerminalAbout isInView={isInView} ></TerminalAbout>
                     <div className={styles.scndLine}></div>
                     <div
                         className={styles.resumeContainer}
                     >
-                        <motion.a
-                            href="https://github.com/LirWe786"
-                            className={styles.gitA}
-                            whileHover={{
-                                scale: 1.2,
-                                transition: { duration: 0.1 }
-                            }}
-                        >
-                            <FaGithub size={32} />
-                        </motion.a>
+                        <MagneticButton>
+                            <a
+                                href="https://github.com/LirWe786"
+                                className={styles.gitA}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FaGithub size={32} />
+                            </a>
+                        </MagneticButton>
 
-                        <a
-                            href="/resume.pdf"
-                            className={styles.resumeA}
-                        >
-                            download <br></br> resume
-                        </a>
+                        <MagneticButton>
+                            <a
+                                href="/resume.pdf"
+                                className={styles.resumeA}
+                                download
+                            >
+                                $ wget resume.pdf
+                            </a>
+                        </MagneticButton>
                     </div>
                 </motion.div>
 

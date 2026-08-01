@@ -43,7 +43,7 @@ export default function TypewriterMotion() {
     
     const startTimer = setTimeout(tick, 500)
     return () => clearTimeout(startTimer)
-  }, []) // пустые скобки — эффект запускается один раз
+  }, []) 
 
   return (
     <div style={{ fontFamily: 'monospace', fontSize: '28px', display: 'flex', alignItems: 'baseline', gap: '8px' }}>

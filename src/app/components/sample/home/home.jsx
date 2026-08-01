@@ -27,12 +27,12 @@ const HomePage = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <p className={styles.nameP}>&lt;Chin-Giz/&gt;</p>
-                    
+
                     <div className={styles.typewriterLine}>
                         <span className={styles.prompt}>$ npx create-</span>
                         <Typewriter
                             options={{
-                                strings: ['landing', 'e-commerce', 'telegram-bot', 'dashboard'],
+                                strings: ['landing', 'e-commerce', 'telegram-bot', 'dashboard', 'PWA', "Quizzes"],
                                 autoStart: true,
                                 loop: true,
                                 delay: 100,
