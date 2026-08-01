@@ -4,7 +4,7 @@ import HomePage from "./components/sample/home/home";
 import AboutMe from "./components/sample/aboutMe/aboutMe";
 import Header from "./components/organism/Header/header";
 import Projects from "./components/sample/projects/projects";
-
+import GetInTouch from "./components/sample/getInTouch/getInTouch";
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
         <HomePage></HomePage>
         <AboutMe></AboutMe>
         <Projects></Projects>
+        <GetInTouch></GetInTouch>
       </main>
     </div>
   );

@@ -1,0 +1,10 @@
+.links {
+    cursor: pointer;
+    padding: 2px;
+    user-select: none;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    transition: all 0.5s;
+}
+
+

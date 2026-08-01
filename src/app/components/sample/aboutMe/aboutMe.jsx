@@ -27,7 +27,6 @@ const AboutMe = () => {
             <div className={styles.aboutMain} >
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0, y: 40, x: -100 }}
                     animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: 40 }}
                     transition={{ duration: 0.6 }}
                     className={styles.aboutStackDiv}
@@ -85,7 +84,6 @@ const AboutMe = () => {
                 <motion.div
                     className={styles.aboutPContainer}
                     ref={ref}
-                    initial={{ opacity: 0, y: 40, x: 20 }}
                     animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: 40 }}
                     transition={{ duration: 0.6 }}
                 >
