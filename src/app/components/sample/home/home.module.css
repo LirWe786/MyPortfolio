@@ -1,84 +1,196 @@
+/* ========================================
+   HERO — MOBILE FIRST (320px - 767px)
+   ======================================== */
+
 .homePage {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100dvh;        /* dvh вместо vh — не ломается от адресной строки */
     display: flex;
     justify-content: center;
-    scroll-margin-top: 80;
+    scroll-margin-top: 80px;   /* добавил px */
     position: relative;
+    padding: 0 20px;           /* воздух по краям */
+    box-sizing: border-box;
 }
 
 .homeMain {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100dvh;
     display: flex;
+    flex-direction: column;    /* на мобиле: текст сверху, фото снизу */
     justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 100px 0 40px;     /* отступ сверху под навигацию */
 }
-
 
 .hiDiv {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    text-align: start;
+    text-align: center;        /* на мобиле по центру */
     align-items: center;
     justify-content: center;
-
-
+    order: 1;                  /* текст первым */
 }
-
 
 .nameP {
     color: var(--accent);
-    font-size: var(--fs-h2);
+    font-size: clamp(36px, 10vw, 56px);  /* от 36px до 56px плавно */
     font-weight: bold;
+    line-height: var(--lh-heading);
+    word-break: break-word;    /* если имя длинное — перенос */
 }
 
 .nameP,
 .specP {
     font-family: var(--font-mono);
-
-
 }
 
+.specP {
+    font-size: clamp(14px, 4vw, 20px);
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+/* Typewriter строка */
+.typewriterLine {
+    font-family: var(--font-mono);
+    font-size: clamp(13px, 3.5vw, 20px);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;   /* по центру на мобиле */
+    flex-wrap: wrap;           /* перенос если не влезает */
+    gap: 4px;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+.prompt {
+    color: var(--text-muted);
+}
+
+.typewriterText {
+    color: var(--accent);
+}
+
+.typewriterCursor {
+    color: var(--accent);
+}
+
+/* Фото */
 .photoDiv {
-    width: 40vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    order: 2;                  /* фото вторым */
 }
 
 .photoCard {
-    width: 50%;
+    width: auto;
+    max-width: 260px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid var(--accent);
-    padding: 20px;
+    padding: 16px;
+    box-sizing: border-box;
 }
 
 .photo {
-    width: 320px;
+    width: 100%;
+    height: auto;
+    max-width: 220px;
     border: 1px solid var(--border-color);
+    display: block;
 }
 
-.typewriterLine {
-    font-family: 'Courier New', monospace;
-    font-size: 24px;
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    margin-top: 16px;
+
+/* ========================================
+   TABLET (768px+)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .homeMain {
+        flex-direction: row;       /* снова в строку */
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        padding: 0;
+    }
+
+    .hiDiv {
+        width: 50%;
+        text-align: start;
+        align-items: flex-start;
+        order: 0;
+    }
+
+    .photoDiv {
+        width: 40%;
+        order: 0;
+    }
+
+    .photoCard {
+        max-width: none;
+        padding: 20px;
+    }
+
+    .photo {
+        max-width: 280px;
+    }
+
+    .typewriterLine {
+        justify-content: flex-start;  /* слева, как на десктопе */
+    }
 }
 
-.prompt {
-    color: #6b7280;
+
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .homeMain {
+        gap: 80px;
+    }
+
+    .nameP {
+        font-size: var(--fs-h2);   /* 60px из твоих переменных */
+    }
+
+    .specP {
+        font-size: var(--fs-body); /* 20px */
+    }
+
+    .photoCard {
+        width: 50%;
+    }
+
+    .photo {
+        max-width: 320px;
+    }
+
+    .typewriterLine {
+        font-size: 24px;
+        margin-top: 24px;
+    }
 }
 
-/* Библиотека создаёт эти классы внутри */
-.typewriterText {
-    color: #a3e635;
-}
 
-.typewriterCursor {
-    color: #a3e635;
+/* ========================================
+   LARGE DESKTOP (1440px+)
+   ======================================== */
+
+@media (min-width: 1440px) {
+    .homeMain {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .nameP {
+        font-size: clamp(60px, 5vw, 80px);
+    }
 }

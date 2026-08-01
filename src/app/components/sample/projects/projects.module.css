@@ -5,7 +5,12 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-
+    position: relative;
+    background-image: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 99px,
+            rgba(163, 230, 53, 0.03) 99px,
+            rgba(163, 230, 53, 0.03) 100px);
 }
 
 .projectsMain {

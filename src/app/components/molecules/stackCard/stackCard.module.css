@@ -1,14 +1,88 @@
+/* ========================================
+   STACK CARD — MOBILE (как раньше, но адаптивно)
+   ======================================== */
+
 .StackCard {
-    /* border: 1px solid var(--accent); */
-    width: 5vw;
-    height: 10vh;
+    width: 22vw;                /* ≈4 в ряд с gap */
+    max-width: 90px;
+    min-width: 70px;
+    height: auto;
+    padding: 10px 4px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 6px;
+    box-sizing: border-box;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
 }
 
-.StackCardP{
+.StackCard img,
+.StackCard svg {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Текст в ОДНУ СТРОКУ, не переносится */
+.StackCardP {
     font-family: var(--font-mono);
     text-align: center;
+    font-size: 9px;
+    color: var(--text-primary);
+    white-space: nowrap;        /* ← запрещаем перенос */
+    overflow: hidden;           /* если не влезет — скроется */
+    text-overflow: ellipsis;    /* ... в конце если очень узко */
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+    .StackCard {
+        width: 12vw;
+        max-width: 120px;
+        padding: 16px 8px;
+        gap: 8px;
+        border-radius: 10px;
+    }
+
+    .StackCard img,
+    .StackCard svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .StackCardP {
+        font-size: 11px;
+    }
+}
+
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    .StackCard {
+        width: 10vw;
+        max-width: 140px;
+        padding: 20px 12px;
+        gap: 10px;
+        border-radius: 12px;
+    }
+
+    .StackCard img,
+    .StackCard svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .StackCardP {
+        font-size: 13px;
+    }
 }

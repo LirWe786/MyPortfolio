@@ -1,99 +1,74 @@
 .aboutMe {
-    width: 90%;
-    height: 100vh;
+    width: 100%;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .aboutMain {
-    height: 100%;
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
-    z-index: 1;           /* ← Контент поверх GhostTerminal */
+    z-index: 1;
+    gap: 24px;
+    padding: 80px 0 40px;
 }
 
 .aboutPContainer {
-    min-height: 700px;
-    height: 100%;
-    width: 50%;
-    padding: 20px;
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-wrap: wrap;
+    justify-content: flex-start;
+    /* УБРАНО: word-break: break-word — оно ломало перенос */
+    box-sizing: border-box;
 }
 
 .scndLine {
-    width: 30%;
-    border: 1px solid var(--accent);
-    margin: 5%;
+    width: 60px;
+    border: none;
+    border-top: 1px solid var(--accent);
+    margin: 16px 0;
+    flex-shrink: 0;
 }
 
-/* Убран .aboutP — теперь TerminalAbout */
-
 .aboutStackDiv {
-    width: 50%;
-    height: 60%;
+    order: 2;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+    padding: 10px 0 30px;
 }
 
-/* === Tilt карточки === */
-.stackCard {
-    position: relative;
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    padding: 32px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    transition: border-color 0.3s ease;
-    transform-style: preserve-3d;
-    will-change: transform;
-    cursor: default;
-    overflow: hidden;
-}
-
-.stackCard:hover {
-    border-color: rgba(163, 230, 53, 0.4);
-}
-
-.stackCard img,
-.stackCard svg {
-    transform: translateZ(30px);
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-}
-
-.stackCard span {
-    transform: translateZ(20px);
-    color: #f3f4f6;
-    font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
-
-/* === Кнопки === */
 .resumeContainer {
-    width: 50%;
-    height: 20%;
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 24px;
+    margin: 8px 0;
+    flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .gitA {
@@ -112,10 +87,10 @@
     position: relative;
     display: inline-block;
     font-family: var(--font-mono);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--accent);
     text-decoration: none;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border: 1px solid #3f6212;
     background: transparent;
     transition: all 0.3s ease;
@@ -123,6 +98,7 @@
     text-align: center;
     cursor: pointer;
     user-select: none;
+    white-space: nowrap;
 }
 
 .resumeA::before {
@@ -146,7 +122,65 @@
     box-shadow: 0 0 30px rgba(163, 230, 53, 0.08);
 }
 
-.resumeA:active {
-    color: var(--accent);
-    background-color: var(--accent-dark);
+@media (min-width: 768px) {
+    .aboutMain {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        padding: 0;
+    }
+
+    .aboutPContainer {
+        order: 0;
+        width: 50%;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .aboutStackDiv {
+        order: 0;
+        width: 45%;
+        gap: 14px;
+    }
+
+    .resumeContainer {
+        width: 80%;
+        gap: 40px;
+        margin: 16px 0;
+    }
+
+    .scndLine {
+        margin: 20px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .aboutMe {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .aboutMain {
+        min-height: 100vh;
+    }
+
+    .aboutStackDiv {
+        width: 50%;
+        gap: 20px;
+    }
+
+    .aboutPContainer {
+        width: 50%;
+        min-height: 700px;
+    }
+
+    .resumeContainer {
+        width: 50%;
+    }
+
+    .scndLine {
+        width: 30%;
+        margin: 5%;
+    }
 }

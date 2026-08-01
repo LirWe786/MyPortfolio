@@ -149,4 +149,7 @@ header {
     --fs-mono-lg: 14px;
     --fs-mono-sm: 11px;
   }
+  html{
+    overflow-y: scroll;
+  }
 }

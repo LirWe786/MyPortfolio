@@ -1,41 +1,41 @@
 .terminal {
-    font-family: 'Courier New', monospace;
-    font-size: 17px;
-    line-height: 1.7;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    /* ← было 17px, уменьшил */
+    line-height: 1.5;
     color: #f3f4f6;
-    min-width: 500px;
-    max-width: 600px;
-    min-height: 420px;
-    /* ← ЗАРЕЗЕРВИРОВАНОЕ МЕСТО */
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 4px;
 }
 
 .command {
     color: #6b7280;
-    margin-bottom: 24px;
-    font-size: 16px;
-    flex-shrink: 0;
+    margin-bottom: 16px;
+    font-size: 13px;
 }
 
 .output {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    flex-grow: 1;
-    /* ← Растягивается внутри min-height */
 }
 
-/* остальное без изменений */
 .text {
     color: #f3f4f6;
-    min-height: 1.7em;
+    min-height: 1.5em;
+    word-wrap: break-word;
+    /* перенос длинных строк */
+    overflow-wrap: break-word;
 }
 
 .comment {
     color: #6b7280;
     opacity: 0.65;
-    min-height: 1.7em;
+    min-height: 1.5em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .highlight {
@@ -48,5 +48,44 @@
 }
 
 .break {
-    height: 14px;
+    height: 10px;
+}
+
+/* ========================================
+   TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+    .terminal {
+        font-size: 16px;
+        line-height: 1.6;
+        padding: 0;
+    }
+
+    .command {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .break {
+        height: 12px;
+    }
+}
+
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    .terminal {
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 600px;
+    }
+
+    .command {
+        font-size: 16px;
+    }
+
+    .break {
+        height: 14px;
+    }
 }

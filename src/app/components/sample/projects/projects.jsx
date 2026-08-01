@@ -1,20 +1,20 @@
-
+'use client'
 
 import styles from "./projects.module.css";
 import Line from '@/app/components/molecules/line/line';
 import works from '@/data/works';
 import WorkCard from "../../molecules/workCard/workCard";
-
+import { motion } from "motion/react";
 
 const Projects = () => {
 
-  
+
 
     return (
-        <div
-
+        <motion.div
             id="projects"
             className={styles.projects}
+           
         >
 
             <Line txt='projects' ></Line>
@@ -26,7 +26,7 @@ const Projects = () => {
                     <WorkCard work={work} key={work.id} />
                 ))}
             </div>
-        </div>
+        </motion.div>
     )
 }
 
