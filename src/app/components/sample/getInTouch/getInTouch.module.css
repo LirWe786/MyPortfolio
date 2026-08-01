@@ -1,65 +1,140 @@
+/* ========================================
+   CONTACT — MOBILE FIRST
+   ======================================== */
+
 .getInTouch {
-    width: 90%;
-    height: 100vh;
+    width: 100%;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .getInTouchMain {
-    width: 90%;
-    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5%;
-
+    gap: 24px;
+    padding: 100px 0 60px;
+    box-sizing: border-box;
 }
 
-
-
 .emailContainer {
-
-    width: 62vw;
-    height: 7vh;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .dollarSym {
-    height: 100%;
-    text-align: end;
-    font-size: var(--fs-h2);
+    font-size: clamp(28px, 8vw, 60px);
     color: var(--accent);
     font-family: var(--font-mono);
+    line-height: 1;
 }
 
 .emailLink {
-    width: 62%;
-    height: 100%;
-    font-size: var(--fs-h2);
-    text-align: end;
+    font-size: clamp(14px, 4vw, 24px);
+    color: var(--text-primary);
     font-family: var(--font-mono);
+    text-decoration: none;
+    text-align: center;
+    word-break: break-word;
+    transition: text-shadow 0.3s ease;
+}
 
+.emailLink:hover {
+    text-shadow: 0 0 20px rgba(163, 230, 53, 0.5), 0 0 40px rgba(163, 230, 53, 0.3);
 }
 
 .underscores {
-    font-size: var(--fs-h2);
+    font-size: clamp(28px, 8vw, 60px);
     color: var(--accent);
     font-family: var(--font-mono);
+    line-height: 1;
 }
 
-
-
 .mediaLinkContainer {
-    height: 5vh;
-    width: 38vw;
-    margin-top: 5vh;
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+/* ========================================
+   TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+    .getInTouch {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .getInTouchMain {
+        padding: 60px 0;
+        gap: 32px;
+    }
+
+    .emailContainer {
+        max-width: 700px;
+        gap: 12px;
+    }
+
+    .mediaLinkContainer {
+        max-width: 500px;
+        gap: 48px;
+        margin-top: 32px;
+    }
+}
+
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    .getInTouchMain {
+        padding: 40px 0;
+        gap: 40px;
+    }
+
+    .emailContainer {
+        max-width: 800px;
+    }
+
+    .dollarSym {
+        font-size: var(--fs-h2);
+    }
+
+    .emailLink {
+        font-size: var(--fs-h2);
+    }
+
+    .underscores {
+        font-size: var(--fs-h2);
+    }
+
+    .mediaLinkContainer {
+        max-width: 600px;
+        margin-top: 40px;
+        gap: 64px;
+    }
 }
