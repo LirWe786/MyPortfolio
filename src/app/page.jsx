@@ -11,7 +11,9 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <Header></Header>
+
         <HomePage></HomePage>
+
         <AboutMe></AboutMe>
         <Projects></Projects>
         <GetInTouch></GetInTouch>

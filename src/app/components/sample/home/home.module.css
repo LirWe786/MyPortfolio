@@ -4,7 +4,14 @@
     display: flex;
     justify-content: center;
     scroll-margin-top: 80;
-    ;
+    position: relative;
+}
+
+.homeMain {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -52,4 +59,26 @@
 .photo {
     width: 320px;
     border: 1px solid var(--border-color);
+}
+
+.typewriterLine {
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-top: 16px;
+}
+
+.prompt {
+    color: #6b7280;
+}
+
+/* Библиотека создаёт эти классы внутри */
+.typewriterText {
+    color: #a3e635;
+}
+
+.typewriterCursor {
+    color: #a3e635;
 }
