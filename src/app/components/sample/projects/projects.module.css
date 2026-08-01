@@ -1,24 +1,63 @@
+/* ========================================
+   PROJECTS — MOBILE FIRST
+   ======================================== */
+
 .projects {
-    width: 90%;
-    height: 100vh;
+    width: 100%;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
-    background-image: repeating-linear-gradient(90deg,
-            transparent,
-            transparent 99px,
-            rgba(163, 230, 53, 0.03) 99px,
-            rgba(163, 230, 53, 0.03) 100px);
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 79px,
+        rgba(163, 230, 53, 0.04) 79px,
+        rgba(163, 230, 53, 0.04) 80px
+    );
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .projectsMain {
-    max-width: 90%;
-    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;   /* ← всегда start, никакого center */
     align-items: center;
-    margin-bottom: 5%;
+    gap: 24px;
+    padding: 100px 0 60px;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+    .projects {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .projectsMain {
+        max-width: 90%;
+        gap: 32px;
+        padding: 60px 0 40px;       /* ← умеренный отступ сверху */
+    }
+}
+
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+    .projectsMain {
+        max-width: 800px;
+        gap: 24px;
+        padding: 40px 0 40px;       /* ← плотно к заголовку */
+    }
 }

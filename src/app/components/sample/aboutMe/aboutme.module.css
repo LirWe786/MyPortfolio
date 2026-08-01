@@ -122,26 +122,29 @@
     box-shadow: 0 0 30px rgba(163, 230, 53, 0.08);
 }
 
+/* ========================================
+   TABLET (768px+)
+   ======================================== */
 @media (min-width: 768px) {
     .aboutMain {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 40px;
-        padding: 0;
+        padding: 40px 0;
     }
 
     .aboutPContainer {
         order: 0;
         width: 50%;
         padding: 20px;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .aboutStackDiv {
         order: 0;
         width: 45%;
-        gap: 14px;
+        gap: 16px;
     }
 
     .resumeContainer {
@@ -151,10 +154,14 @@
     }
 
     .scndLine {
-        margin: 20px 0;
+        margin: 16px 0;
+        /* ← плотнее */
     }
 }
 
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
 @media (min-width: 1024px) {
     .aboutMe {
         width: 90%;
@@ -162,7 +169,9 @@
     }
 
     .aboutMain {
-        min-height: 100vh;
+        min-height: auto;
+        height: auto;
+        padding: 40px 0;
     }
 
     .aboutStackDiv {
@@ -172,7 +181,9 @@
 
     .aboutPContainer {
         width: 50%;
-        min-height: 700px;
+        min-height: auto;
+        height: auto;
+        justify-content: flex-start;
     }
 
     .resumeContainer {
@@ -181,6 +192,6 @@
 
     .scndLine {
         width: 30%;
-        margin: 5%;
+        margin: 16px 0;
     }
 }
